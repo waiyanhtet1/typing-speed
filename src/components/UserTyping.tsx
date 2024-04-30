@@ -1,3 +1,5 @@
+import Cursor from "./Cursor";
+
 type TypingProps = {
   userInput: string;
   className: string;
@@ -13,6 +15,7 @@ const UserTyping = ({ userInput, className }: TypingProps) => {
           {char}
         </span>
       ))}
+      <Cursor />
     </div>
   );
 };
