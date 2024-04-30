@@ -24,6 +24,7 @@ const App = () => {
           userInput={typed}
         />
       </WordContainer>
+
       <ResetButton
         onRestart={restart}
         className="mx-auto mt-10 text-slate-500"
