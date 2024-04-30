@@ -9,14 +9,14 @@ import useEngine from "./hooks/useEngine";
 // const words = faker.lorem.words(10);
 
 const App = () => {
-  const { state, words } = useEngine();
+  const { state, words, timeLeft, typed } = useEngine();
 
   return (
     <>
-      <CountDown time={30} />
+      <CountDown time={timeLeft} />
       <WordContainer>
         <GenerateWord words={words} />
-        <UserTyping className="absolute inset-0" userInput="text" />
+        <UserTyping className="absolute inset-0" userInput={typed} />
       </WordContainer>
       <ResetButton
         onRestart={() => null}
