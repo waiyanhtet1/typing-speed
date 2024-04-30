@@ -16,7 +16,11 @@ const App = () => {
       <CountDown time={timeLeft} />
       <WordContainer>
         <GenerateWord words={words} />
-        <UserTyping className="absolute inset-0" userInput={typed} />
+        <UserTyping
+          className="absolute inset-0"
+          words={words}
+          userInput={typed}
+        />
       </WordContainer>
       <ResetButton
         onRestart={() => null}

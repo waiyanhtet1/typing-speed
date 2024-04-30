@@ -1,19 +1,23 @@
+import Character from "./Character";
 import Cursor from "./Cursor";
 
 type TypingProps = {
   userInput: string;
   className: string;
+  words: string;
 };
 
-const UserTyping = ({ userInput, className }: TypingProps) => {
+const UserTyping = ({ userInput, className, words }: TypingProps) => {
   const typedCharacter = userInput.split("");
 
   return (
     <div className={className}>
       {typedCharacter.map((char, index) => (
-        <span key={`${char}_${index}`} className="text-primary-400">
-          {char}
-        </span>
+        <Character
+          key={`${char}_${index}`}
+          actual={char}
+          expected={words[index]}
+        />
       ))}
       <Cursor />
     </div>
