@@ -1,14 +1,16 @@
-import { faker } from "@faker-js/faker";
 import CountDown from "./components/CountDown";
 import GenerateWord from "./components/GenerateWord";
 import ResetButton from "./components/ResetButton";
 import Result from "./components/Result";
 import UserTyping from "./components/UserTyping";
 import WordContainer from "./components/WordContainer";
+import useEngine from "./hooks/useEngine";
 
-const words = faker.lorem.words(10);
+// const words = faker.lorem.words(10);
 
 const App = () => {
+  const { state, words } = useEngine();
+
   return (
     <>
       <CountDown time={30} />
